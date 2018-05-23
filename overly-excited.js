@@ -1,17 +1,19 @@
 let sentence = ["The","walrus","danced","through","the","trees","in","the","light","of","the","moon"];
+let nextSentence = ["Why", "was", "the", "walrus", "dancing", "at", "all"];
 
-function addExcitement (theWordArray) {
+let addExcitement = (theWordArray, punctuation) => {
     let buildMeUp = ""
-    let buildPunctuation = "!"
+    let buildPunctuation = punctuation
 
     for (let i = 1; i <= theWordArray.length; i++) {
       
           if (i % 3 ===0){
-            buildMeUp += (sentence[i-1] + buildPunctuation + " ")
-            buildPunctuation += "!"
+            buildMeUp += (theWordArray[i-1] + buildPunctuation + " ")
+            buildPunctuation += punctuation
         } else {
-            buildMeUp += (sentence[i-1] + " ")
+            buildMeUp += (theWordArray[i-1] + " ")
         } console.log(buildMeUp)
     } ;
 }
-addExcitement(sentence)
+addExcitement(sentence, "?")
+addExcitement(nextSentence, "!")
